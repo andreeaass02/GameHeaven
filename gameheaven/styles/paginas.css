@@ -1,0 +1,117 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.titulo {
+    text-align: left; 
+    font-family: Arial Black; 
+    font-weight: bold; 
+    font-size: 30px; 
+    color: #fff; 
+    text-shadow: 0 1px 0 #ddd, 0 2px 0 #ccc, 0 3px 0 #bbb, 0 4px 0 #aaa, 0 5px 0 #acacac, 0 6px 1px rgba(0,0,0,0.1), 0 0 5px rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.3), 0 3px 5px rgba(0,0,0,0.2), 0 5px 10px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.2), 0 20px 20px rgba(0,0,0,0.15);
+    margin-top: 10px;
+    text-align: center;
+}
+
+.games-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 1200px;
+}
+
+.card {
+    flex: 0 1 calc(25% - 20px);
+    box-sizing: border-box;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.card img {
+    max-width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 10px;
+}
+
+.card h5 {
+    font-size: 18px;
+    text-align: start;
+}
+
+.card p {
+    font-size: 16px;
+    color: #555;
+    text-align: start;
+}
+.precio-stock {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.precio-stock p {
+    margin: 0;
+}
+
+.precio {
+    order: 1; /* Cambia el orden de visualización */
+}
+
+.stock {
+    order: 2; /* Cambia el orden de visualización */
+}
+.card button {
+    padding: 10px 20px;
+    background-color: #1d588f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.card button:hover {
+    background-color: #0b2261;
+}
+
+.card button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+@media (max-width: 1024px) {
+    .card {
+        flex: 0 1 calc(33.33% - 20px);
+    }
+}
+
+@media (max-width: 768px) {
+    .card {
+        flex: 0 1 calc(50% - 20px);
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        flex: 0 1 calc(50% - 20px);
+    }
+    .card h5 {
+        font-size: 16px;
+    }
+    .card p {
+        font-size: 14px;
+    }
+    .card button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}
