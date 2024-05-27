@@ -42,11 +42,13 @@ if (session_status() == PHP_SESSION_NONE) {
         <li class="nav-item">
           <a class="nav-link" href="#">Sobre Nosotros</a>
         </li>
+        <?php if(isset($_SESSION['rol']) && $_SESSION['rol'] === 'administrador'): ?>
+          <li class="nav-item">
+            <a class="nav-link" href="admin.php">Administración</a>
+          </li>
+        <?php endif; ?>
       </ul>
       <ul class="navbar-nav ml-auto">
-      <li class="nav-item">
-          <a class="nav-link" href="ver_carrito.php">Carrito</a>
-        </li>
         <?php if(isset($_SESSION['usuario'])): ?>
           <li class="nav-item">
             <span class="navbar-text">¡Bienvenido/a, <?php echo $_SESSION['usuario']; ?>!</span>
@@ -59,6 +61,9 @@ if (session_status() == PHP_SESSION_NONE) {
             <a class="nav-link" href="login/login.php">Login</a>
           </li>
         <?php endif; ?>
+        <li class="nav-item">
+          <a class="nav-link" href="ver_carrito.php">Carrito</a>
+        </li>
       </ul>
     </div>
   </div>

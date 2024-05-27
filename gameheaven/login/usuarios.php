@@ -17,7 +17,7 @@ class Usuario {
     }
 
     public function verificar($usuario, $contra) {
-        $query = "SELECT id_usuario, nombre, contrasena FROM usuarios WHERE nombre = :usuario AND contrasena = :contra";
+        $query = "SELECT id_usuario, nombre, contrasena, rol FROM usuarios WHERE nombre = :usuario AND contrasena = :contra";
         $stmt = $this->conn->prepare($query);
         $parametros = [':usuario' => $usuario, ':contra' => $contra];
         $stmt->execute($parametros);
@@ -27,6 +27,7 @@ class Usuario {
             session_start();
             $_SESSION["id_usuario"] = $user['id_usuario'];
             $_SESSION["usuario"] = $user['nombre'];
+            $_SESSION["rol"] = $user['rol'];  // Guardar el rol del usuario en la sesión
             header("Location: ../index.php");
         } else {
             echo "<div class='mensaje-error'>El usuario o la contraseña son incorrectos.</div>";
